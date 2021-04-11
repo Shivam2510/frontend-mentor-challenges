@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;600&display=swap');
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  margin: 0;
+}
+
+.container{
+  display: flex;
+  min-height: 100vh;
+}
+
+.left{
+  font-family: 'Josefin Sans', sans-serif;
+  background-image: url('images/bg-pattern-desktop.svg');
+  background-size: cover;
+  background-position: center center;
+  width: 60%;
+  padding: 0 40px 40px;
+}
+
+.inner-container{
+  max-width: 450px;
+  margin: auto;
+}
+
+.right{
+  width: 40%;
+
+}
+
+.image-right{
+  background-image: url('images/hero-desktop.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+.brand-logo{
+  margin: 60px 0;
+  width: 200px;
+
+}
+
+.bg-mobile{
+  display: none;
+}
+
+h1{
+  color: hsl(0, 6%, 24%);
+  text-transform: uppercase;
+  font-size: 60px;
+  line-height: 1.1;
+  letter-spacing: 10px;
+  margin-bottom: 0;
+  transform: translateX(-100%);
+  animation: scrollX_tag 0.5s ease forwards;
+}
+
+
+
+h1 span{
+  color: hsl(0, 36%, 70%);
+
+  font-weight: 200;
+}
+
+p{
+  color: hsl(0, 36%, 70%);
+  margin: 30px 0;
+  line-height: 26px;
+  opacity: 0;
+  transform: translateX(100%);
+  animation: scrollX1_tag 0.5s ease forwards;
+}
+
+
+form{
+  position: relative;
+  transform: translateX(-100%);
+  animation: scrollX_tag 0.5s ease forwards;
+}
+
+input{
+  background-color: transparent;
+  border: 1px solid hsl(0, 36%, 70%);
+  padding: 15px 30px;
+  border-radius: 50px;
+  width: 100%;
+  font-size: 16px;
+  height: 55px;
+}
+
+input:focus{
+  border-width: 2px;
+  outline: none;
+  box-shadow: 2px 5px 10px hsl(0, 36%, 70%, 0.5);
+}
+
+input::placeholder{
+  color: hsl(0, 36%, 70%);
+}
+
+button{
+  background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  box-shadow: 0px 0px 10px hsl(0, 36%, 70%, 0.5);
+  padding: 15px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  height: 55px;
+  width: 100px;
+  transition: opacity 0.2s ease;
+}
+
+button:hover{
+  opacity: 0.6;
+}
+
+small{
+
+  display: none;
+  margin-top: 15px;
+  margin-left: 30px;
+  color: hsl(0, 93%, 68%);
+}
+
+.error-img{
+  display: none;
+  position: absolute;
+  top: 15px;
+  right:120px;
+}
+
+form.error{
+
+}
+
+form.error input{
+  border: 2px solid hsl(0, 93%, 68%);
+}
+
+form.error  .error-img{
+  display: block;
+}
+
+form.error small{
+  display: block;
+}
+
+
+
+/* Animation  */
+@keyframes scrollX_tag {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scrollX1_tag {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
+/* for mobile purpose */
+@media screen and (max-width: 600px) {
+  .left{
+    width: 100%;
+  }
+  .right{
+    display: none;
+  }
+  .bg-mobile{
+    display: block;
+    margin-left: -40px;
+    margin-right: -40px;
+    width:calc(100% + 80px);
+  }
+  .brand-logo{
+    margin: 30px 0;
+    width: 100px;
+  }
+  h1{
+    font-size: 40px;
+  }
+}
